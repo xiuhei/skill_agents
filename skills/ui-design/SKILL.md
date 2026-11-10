@@ -1,6 +1,6 @@
 ---
 name: ui-design
-description: Use when designing, implementing, refactoring, or reviewing web, desktop, tablet, and mobile UIs. Enforce a restrained black-white-gray visual style, consistent icons (never use Emoji as UI icons), minimal and authentic UI copy, separation of requirements from visible content, and desktop 12×12 / tablet 9×9 / mobile 4×6 grids. Covers component reuse, design tokens, interaction, responsiveness, accessibility, and pre-delivery review.
+description: Use when designing, implementing, refactoring, or reviewing web, desktop, tablet, and mobile UIs. Enforce a restrained black-white-gray visual style, consistent icons (never use Emoji as UI icons), minimal and authentic UI copy, separation of requirements from visible content, and desktop 12×12 / tablet 9×9 / mobile 4×12 grids. Covers component reuse, design tokens, interaction, responsiveness, accessibility, and pre-delivery review.
 ---
 
 # UI Design
@@ -14,7 +14,7 @@ This Skill applies to creating UIs from scratch, modifying existing UIs, impleme
 1. **Icon gate:** In AI-designed interfaces, never use Emoji, colorful emoticons, or Emoji fonts as icons for buttons, menus, navigation, feature cards, notifications, or other UI elements. Use the project's existing SVG/icon components; if none exist, adopt one established, stylistically consistent icon set. Preserve Emoji in actual user input, chat messages, usernames, and content explicitly requested for display.
 2. **Color gate:** Default to neutral black, white, and gray tones (usually near-black and off-white, avoiding large areas of absolute black or white). Do not arbitrarily add purple, blue-purple gradients, fluorescent colors, colored cards, rainbow backgrounds, colored icons, or decorative “tech” effects. Use brand colors only when explicitly requested or required by existing guidelines. Semantic error/success/warning colors may be used sparingly, never as decoration.
 3. **Copy gate:** Every piece of **visible text** must serve a clear product purpose: identifying location, explaining data, supporting an action, communicating status, or conveying necessary business content. Do not fill interfaces with design commentary, implementation ideas, restated requirements, prompts, decorative subtitles, meaningless labels, fabricated statistics, placeholder marketing copy, or debug information.
-4. **Layout gate:** Use three baseline grids: desktop `12×12`, tablet `9×9`, and mobile `4×6`. Some grid dimensions can be adjusted, generally using 4, 6, 8, 9, or 12. Columns govern horizontal layout; rows serve only as logical divisions of the initial viewport or workspace. Scrolling content grows naturally.
+4. **Layout gate:** Use three baseline grids: desktop `12×12`, tablet `9×9`, and mobile `4×12`. Some grid dimensions can be adjusted, generally using 4, 6, 8, 9, or 12. Columns govern horizontal layout; rows serve only as logical divisions of the initial viewport or workspace. Scrolling content grows naturally.
 
 ---
 
@@ -146,12 +146,12 @@ Grid notation means “columns × rows.” **Columns form the actual horizontal 
 | --- | --- | --- | --- | --- |
 | **Desktop ≥1024px** | **12×12** | 32px | 20px | Navigation spans 2–3 columns; main content 9–10 columns |
 | **Tablet 600–1023px** | **9×9** | 24px | 16px | Main content spans 6–9 columns; secondary regions may collapse |
-| **Mobile <600px** | **4×6** | 16px | 12px | Main flow spans 4 columns; occasional 2+2 side-by-side layout |
+| **Mobile <600px** | **4×12** | 16px | 12px | Main flow spans 4 columns; occasional 2+2 side-by-side layout |
 
 - Choose based on **actual available page/workspace width**. A narrow desktop app window may use the tablet or mobile layout. For split views, sidebars, and embedded containers, prefer container queries or equivalent platform mechanisms.
 - Align headings, navigation, lists, tables, and cards to column lines. Components may span multiple columns; individual controls do not each need to fill one cell.
 - Title bars, sidebars, footers, and overlays need not be forced into identical column spans. Components may use Flex/Stack and local layouts internally.
-- The `12/9/6` rows serve as logical groupings for an initial viewport or fixed workspace. Long pages, chats, tables, and lists use natural heights and scrolling. Do not clip content to force a fixed row count.
+- The `12/9/12` rows serve as logical groupings for an initial viewport or fixed workspace. Long pages, chats, tables, and lists use natural heights and scrolling. Do not clip content to force a fixed row count.
 - Never add empty cards, extra headings, descriptions, or decorations to fill the grid. The grid organizes existing information.
 
 **Minimal web implementation reference (prefer the project's existing layout system when available):**
@@ -159,7 +159,7 @@ Grid notation means “columns × rows.” **Columns form the actual horizontal 
 ```css
 :root {
   --grid-cols: 4;
-  --grid-rows-guide: 6;
+  --grid-rows-guide: 12;
   --page-margin: 16px;
   --grid-gap: 12px;
 }
@@ -267,7 +267,7 @@ Prefer established components appropriate to the actual task:
 - [ ] Unrequested blue-purple gradients, neon colors, colorful icons, meaningless strong accent colors, or arbitrary color coding.
 - [ ] Unnecessary visible copy: decorative eyebrow labels, repeated subtitles, explanations of card functions, AI self-reference, and placeholder copy.
 - [ ] Multiple inconsistent icon libraries, Emoji fallback glyphs, or misaligned/unclear icons.
-- [ ] Violation of desktop `12×12` / tablet `9×9` / mobile `4×6` baselines, or content squeezed into fixed row counts.
+- [ ] Violation of desktop `12×12` / tablet `9×9` / mobile `4×12` baselines, or content squeezed into fixed row counts.
 - [ ] Missing essential states, inaccessible dialogs, invisible focus, accidental mobile touches, or layout overflow.
 
 ### P2: Detail Quality and Consistency
@@ -306,4 +306,4 @@ The design principles of these projects have been selected, reorganized, and int
 - `design-taste`: Avoidance of repetitive cards, exaggerated gradients, and default AI template patterns. https://github.com/madebymustafa/design-taste
 - WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
-**Important:** The `12×12`, `9×9`, and `4×6` layouts are grid conventions specific to this Skill. Row counts are logical guides, not industry standards requiring web pages to have fixed row counts. The default grayscale palette and prohibition on AI-added Emoji and redundant copy are explicit design preferences of this project. Essential accessibility and business feedback always take priority.
+**Important:** The `12×12`, `9×9`, and `4×12` layouts are grid conventions specific to this Skill. Row counts are logical guides, not industry standards requiring web pages to have fixed row counts. The default grayscale palette and prohibition on AI-added Emoji and redundant copy are explicit design preferences of this project. Essential accessibility and business feedback always take priority.
