@@ -7,11 +7,6 @@
 - **Review before executing**: Check assumptions and proposed approaches, then choose an appropriate implementation path rather than blindly following potentially flawed instructions.
 - **Commit at milestones**: Make Git commits at key milestones.
 
-## Environment
-
-- **Isolate dependencies**: Run databases, middleware, and similar dependencies in Docker. Give containers and volumes meaningful names; remove test environments after testing to free disk space.
-- **Manage installations and temporary files**: Prefer `C:\Program Files` for development environments and applications. If unavailable or the default installation path differs, use `C:\environment` or `C:\app`. Manage versions carefully. Delete temporary files after use; keep any retained files in `C:\code\tmp`.
-
 ## Logging
 
 - **Record clear outcomes**: Log the final status of key business operations, distinguishing success, failure, and partial success.
@@ -19,3 +14,8 @@
 - **Track tasks**: Log each asynchronous task's ID, execution status, and final result.
 - **Trace state changes**: Log the affected object and relevant before and after states.
 - **Avoid noise**: Do not repeat meaningless intermediate steps or add logs without diagnostic value.
+
+## Environment
+
+- **Isolate dependencies**: Run databases, middleware, and similar dependencies in Docker. Give containers and volumes meaningful names; remove test environments after testing to free disk space.
+- **Manage installations and temporary files**: Prefer `C:\Program Files` for development environments and applications. If unavailable or the default installation path differs, use `C:\environment` or `C:\app`. Manage versions carefully. Delete temporary files after use; keep any retained files in `C:\code\tmp`.
