@@ -2,6 +2,7 @@
 
 - **Keep content relevant**: Code, comments, and documentation must contain only information needed to maintain the current system. Omit authors, dates, version histories, task origins, development or reasoning processes, obsolete or failed approaches, and unrelated explanations.
 - **Comment only when needed**: Let clear code express intent. Use comments only for essential design intent, constraints, and non-obvious logic.
+- Keep frontend interfaces clean and uncluttered, include only the text users need to understand the interface and complete their tasks, and omit unnecessary notes and explanations.
 - **Keep the system current**: Document only the active design, architecture, interfaces, and usage. When an approach changes, update affected content and remove obsolete code, configuration, comments, and documentation. Do not retain historical approaches, comparisons, or compatibility burdens.
 - **Make minimal changes**: Perform only necessary changes and validation. Avoid overengineering, excessive defensive code, and overtesting. Obtain explicit user approval before handling or testing extremely unlikely edge cases or concurrency issues.
 - **Review before executing**: Check assumptions and proposed approaches, then choose an appropriate implementation path rather than blindly following potentially flawed instructions.
